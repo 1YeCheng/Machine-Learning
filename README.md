@@ -1,77 +1,73 @@
-# 机器学习课程项目集
+# Machine Learning Coursework Portfolio
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-numerical%20computing-013243?logo=numpy&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-model%20evaluation-F7931E?logo=scikitlearn&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-visualization-11557C)
 ![LIBSVM](https://img.shields.io/badge/LIBSVM-3.31-00599C)
-![Status](https://img.shields.io/badge/status-coursework%20portfolio-blue)
 
-本仓库包含两个本科阶段完成的机器学习课程项目，内容围绕核心算法实现、可复现实验流程、定量评估与可视化结果展开，展示对经典机器学习方法的理解和实验组织能力。
+This repository contains two undergraduate machine-learning coursework projects on classical supervised learning. The work covers from-scratch algorithm implementation, reproducible experimental workflows, model evaluation, and result visualisation, with complete records from data processing and model training to validation design and result analysis.
 
-这些项目面向研究生申请场景整理，希望让导师能够快速看到我在机器学习方向的基础训练：包括数学模型实现、实验设计意识，以及不只依赖单一准确率指标来比较模型的习惯。
+## Project Overview
 
-## 项目概览
-
-| 项目 | 主题 | 主要方法 | 输出内容 |
+| Project | Research Focus | Methods | Main Outputs |
 |---|---|---|---|
-| [`lab1`](lab1/README.md) | 西瓜 3.0a 数据集上的线性模型实验 | 逻辑回归、二次特征扩展、线性判别分析、留一法、分层 K 折、自助采样袋外评估 | 指标表、预测结果、混淆矩阵、PR 曲线 |
-| [`lab2`](lab2/README.md) | SVM/SVR 实验与模型对比 | LIBSVM 分类/回归、BP 神经网络、手写 C4.5 决策树 | 模型文件、预测表、评估指标、决策边界、对比图 |
+| [`lab1`](lab1/README.md) | Small-sample binary classification on Watermelon 3.0a | From-scratch logistic regression, quadratic feature expansion, from-scratch LDA, LOOCV, stratified 5-fold CV, bootstrap OOB | Prediction tables, metric summaries, confusion matrices, PR curves |
+| [`lab2`](lab2/README.md) | SVM/SVR experiments and multi-model classification comparison | LIBSVM, BP neural network, handwritten C4.5 decision tree, UCI Wine/WDBC classification | Model files, prediction outputs, metric tables, decision boundaries, confusion matrices, regression diagnostic plots |
 
-实验报告草稿和 Word 文档已通过 `.gitignore` 排除；仓库保留代码、数据集和可复现实验产物。
+## Methods and Experimental Design
 
-## 技术亮点
+The two projects cover complementary levels of machine-learning practice, from implementing model mechanisms to organising comparative experiments.
 
-- 从零实现二分类逻辑回归，包括牛顿法优化、数值稳定的 sigmoid/softplus、带部分主元的高斯消元，以及可选 L2 正则化。
-- 从零实现二分类线性判别分析，包括类别先验、共享协方差估计、协方差正则化，以及基于判别函数的概率预测。
-- 构建多种评估流程，包括训练集回代、留一法交叉验证、分层 5 折交叉验证和 bootstrap 袋外评估。
-- 集成 LIBSVM 完成 SVM 分类与 SVR 回归，覆盖缩放、训练、预测、支持向量分析和决策边界可视化。
-- 在 UCI 数据集上比较 SVM、BP 神经网络和手写 C4.5 风格增益率决策树。
+`lab1` focuses on the implementation and evaluation of classical linear classifiers. I implemented binary logistic regression from scratch, including Newton's method, numerically stable sigmoid/softplus computation, Gaussian elimination with partial pivoting, and optional L2 regularisation. I also implemented linear discriminant analysis, including class-mean estimation, shared covariance estimation, class priors, and covariance regularisation. To examine evaluation behaviour under a small-sample setting, the experiments use training-set resubstitution, leave-one-out cross-validation, stratified 5-fold cross-validation, and bootstrap out-of-bag estimation.
 
-## 代表性结果
+`lab2` focuses on model comparison and reproducible experimentation. I used LIBSVM to conduct linear-kernel and RBF-kernel SVM classification, as well as SVR regression. I also compared Linear SVM, RBF SVM, BP neural network, and a handwritten C4.5 decision tree on the UCI Wine and WDBC breast cancer diagnosis datasets. The Wine task is formulated as a three-class wine classification problem using 13 physicochemical features. The WDBC task is formulated as benign-versus-malignant tumour classification using 30 cytological diagnostic features. Apart from LIBSVM and the BP neural network, the C4.5 decision tree, experiment orchestration, metric computation, and plotting routines were implemented by myself.
 
-| 实验 | 数据集 | 代表性结果 |
+## Selected Results
+
+| Experiment | Dataset | Result |
 |---|---|---|
-| 二次特征逻辑回归 | Watermelon 3.0a | 5 折交叉验证 accuracy 0.7059，F1 0.7059 |
-| 线性判别分析 | Watermelon 3.0a | 5 折交叉验证 accuracy 0.6471，F1 0.6250 |
-| SVM 分类 | Watermelon 3.0a | Linear/RBF SVM accuracy 0.7059，F1 0.6154 |
-| UCI 分类对比 | Wine | Linear SVM accuracy 0.9630；C4.5 F1 0.9482 |
-| UCI 分类对比 | Breast Cancer WDBC | BP accuracy 0.9825；Linear SVM accuracy 0.9649 |
-| SVR 回归 | Watermelon 3.0a | RBF-SVR RMSE 0.112893，MAE 0.095463 |
+| Quadratic-feature logistic regression | Watermelon 3.0a | 5-fold CV accuracy 0.7059, F1 0.7059 |
+| Linear discriminant analysis | Watermelon 3.0a | 5-fold CV accuracy 0.6471, F1 0.6250 |
+| SVM classification | Watermelon 3.0a | Linear/RBF SVM accuracy 0.7059, F1 0.6154 |
+| UCI classification comparison | Wine | Linear SVM accuracy 0.9630, F1 0.9636 |
+| WDBC breast cancer diagnosis | Breast Cancer WDBC | BP accuracy 0.9825, F1 0.9811; Linear SVM accuracy 0.9649, F1 0.9618 |
+| SVR regression | Watermelon 3.0a | RBF-SVR RMSE 0.112893, MAE 0.095463 |
 
-其中小规模西瓜数据集主要用于透明地分析算法机制和可视化模型行为；UCI 实验则提供了更大规模基准数据集上的横向比较。
+The corresponding `results/` directories retain per-sample predictions, evaluation metrics, and visual outputs for model-level and sample-level inspection.
 
-## 仓库结构
+## Key Strengths
+
+- **From-scratch algorithm implementation**: Implemented logistic regression, linear discriminant analysis, and a C4.5-style gain-ratio decision tree, covering optimisation, discriminant functions, covariance estimation, gain-ratio splitting, and recursive tree construction.
+- **Careful evaluation design**: Compared training-set resubstitution, LOOCV, stratified 5-fold CV, and bootstrap OOB on a small-sample dataset, reflecting attention to evaluation stability.
+- **Applied benchmark comparison**: Used the WDBC breast cancer diagnosis dataset for benign-versus-malignant classification with 30 cytological features, comparing SVM, BP neural network, and a handwritten C4.5 decision tree.
+- **Complete evaluation framework**: Beyond aggregate metrics, the projects retain prediction files, confusion matrices, decision boundaries, PR curves, and regression diagnostic plots, evaluating model performance through sample-level predictions, metric statistics, and visual evidence.
+
+## Repository Structure
 
 ```text
 .
 +-- lab1/
-|   +-- 3.3/      # 逻辑回归实验
-|   +-- 3.5/      # 线性判别分析实验
+|   +-- 3.3/      # Logistic regression experiments
+|   +-- 3.5/      # Linear discriminant analysis experiments
 +-- lab2/
-|   +-- data/     # 西瓜数据集与 UCI 数据集
-|   +-- src/      # 实验流水线与手写 C4.5 决策树
-|   +-- results/  # 生成的指标、预测结果和图像
+|   +-- data/     # Watermelon, Wine, and WDBC datasets
+|   +-- src/      # Experiment pipeline and handwritten C4.5 tree
+|   +-- results/  # Metrics, predictions, models, and figures
 |   +-- libsvm-3.31/
 +-- README.md
 ```
 
-## 运行环境
+Draft reports and Word documents are excluded through `.gitignore`; the repository keeps the code, datasets, and reproducible experimental artefacts.
 
-项目使用 Python 3.10+ 和常见科学计算包。`lab2` 额外依赖仓库中随附的 Windows 版 LIBSVM 可执行文件。
+## Environment
+
+The projects use Python 3.10+ and common scientific-computing packages. `lab2` additionally relies on the bundled Windows LIBSVM executables.
 
 ```bash
 pip install numpy matplotlib scikit-learn
 ```
 
-从各项目目录运行实验：
-
-```bash
-cd lab2
-python src/run_lab2_experiments.py
-```
-
-`lab1` 中的脚本按实验组织：
+Run representative experiments in `lab1`:
 
 ```bash
 cd lab1/3.3
@@ -81,3 +77,11 @@ python src/logistic_regression_quadratic_5fold.py
 cd ../3.5
 python src/linear_discriminant_analysis_watermelon.py
 ```
+
+Run the full `lab2` experimental pipeline:
+
+```bash
+cd lab2
+python src/run_lab2_experiments.py
+```
+
