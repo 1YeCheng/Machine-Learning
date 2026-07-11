@@ -2,7 +2,7 @@
 
 ![NumPy](https://img.shields.io/badge/NumPy-numerical%20computing-013243?logo=numpy&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-model%20evaluation-F7931E?logo=scikitlearn&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-visualization-11557C)
+![From-scratch Models](https://img.shields.io/badge/From--scratch%20Models-BP%20%7C%20C4.5%20%7C%20LDA-6A5ACD)
 ![LIBSVM](https://img.shields.io/badge/LIBSVM-3.31-00599C)
 
 This repository contains two undergraduate machine-learning coursework projects on classical supervised learning. The work covers from-scratch algorithm implementation, reproducible experimental workflows, model evaluation, and result visualisation, with complete records from data processing and model training to validation design and result analysis.
