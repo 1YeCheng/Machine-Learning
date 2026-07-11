@@ -1,0 +1,13 @@
+﻿model,kernel,accuracy,precision,recall,f1,tp,fn,fp,tn,total_sv,nr_sv,support_ids,train_output,predict_output
+linear,linear,0.7058823529411765,0.8,0.5,0.6153846153846154,4,4,1,8,16,8 8,1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 17,"*
+optimization finished, #iter = 10
+nu = 0.907659
+obj = -13.488793, rho = 1.361686
+nSV = 16, nBSV = 13
+Total nSV = 16",Accuracy = 70.5882% (12/17) (classification)
+rbf,RBF,0.7058823529411765,0.8,0.5,0.6153846153846154,4,4,1,8,17,8 9,1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17,"*
+optimization finished, #iter = 11
+nu = 0.860627
+obj = -12.365917, rho = 0.541791
+nSV = 17, nBSV = 14
+Total nSV = 17",Accuracy = 70.5882% (12/17) (classification)

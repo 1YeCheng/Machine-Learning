@@ -1,0 +1,5 @@
+﻿model,kernel,params,mse,rmse,mae,squared_correlation,total_sv,libsvm_output
+linear,linear,-s 3 -t 0 -c 1 -p 0.05,0.013135263466757738,0.11460917706168969,0.09617494410417898,0.038372533624249666,13,"Mean squared error = 0.0131353 (regression)
+Squared correlation coefficient = 0.0383725 (regression)"
+rbf,RBF,-s 3 -t 2 -c 1 -g 1 -p 0.05,0.012744716780498863,0.11289250099319646,0.09546335674721089,0.06085783721962107,13,"Mean squared error = 0.0127447 (regression)
+Squared correlation coefficient = 0.0608578 (regression)"
